@@ -25,7 +25,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
                 )
         ),
         externalDocs = @ExternalDocumentation(
-                description = "School management application backend",
+                description = "Complete School management application backend",
                 url = "https://github.com/Adebayour66265/school_APIs"
         )
 )

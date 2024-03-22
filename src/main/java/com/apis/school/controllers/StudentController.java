@@ -1,6 +1,6 @@
 package com.apis.school.controllers;
 
-import com.apis.school.Student;
+import com.apis.school.entity.Student;
 import com.apis.school.repository.StudentRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

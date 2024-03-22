@@ -1,6 +1,6 @@
 package com.apis.school.repository;
 
-import com.apis.school.Student;
+import com.apis.school.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
