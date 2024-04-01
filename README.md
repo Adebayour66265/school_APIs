@@ -2,25 +2,42 @@
 
 This API provides endpoints for managing schools and students.
 
-## SchoolController
+## Prerequisites
 
-### Endpoints
+Before running this application, you need to have the following installed:
+- JDK 11 or newer
+- Maven (if you are running the application using Maven)
+- An IDE of your choice (Optional, for example, IntelliJ IDEA or Eclipse)
+
+## Running the Application
+
+### Using Maven
+
+1. Open a terminal or command prompt.
+2. Navigate to the root directory of the project where the `pom.xml` file is located.
+3. Run the following command to compile the project and start the application:
+
+
+The application will start and by default, it will be accessible at `http://localhost:8080`.
+
+### Using an IDE
+
+1. Import the project into your IDE of choice as a Maven project.
+2. Locate the `main` method which is the entry point of the application. It is typically found in a class annotated with `@SpringBootApplication`.
+3. Run the `main` method as a Java application.
+
+Your IDE will start the application, and it will be accessible at `http://localhost:8080`.
+
+## Endpoints
+
+### SchoolController
 
 - `POST /schools`: Create a new school.
 - `GET /schools`: Retrieve all schools.
 - `GET /getAllStudentInEachSchool`: Retrieve all students in each school.
 - `DELETE /school/{school_id}`: Delete a school by ID.
 
-### Usage
-
-- To create a new school, send a POST request to `/schools` with the school data in the request body.
-- To retrieve all schools, send a GET request to `/schools`.
-- To retrieve all students in each school, send a GET request to `/getAllStudentInEachSchool`.
-- To delete a school by ID, send a DELETE request to `/school/{school_id}`.
-
-## StudentController
-
-### Endpoints
+### StudentController
 
 - `GET /`: Get a welcome message.
 - `POST /students`: Create a new student.
@@ -29,25 +46,4 @@ This API provides endpoints for managing schools and students.
 - `GET /students/search/{student_name}`: Search for students by name.
 - `DELETE /students/{student_id}`: Delete a student by ID.
 - `DELETE /deleteAllStudents`: Delete all students.
-
-### Usage
-
-- To get a welcome message, send a GET request to `/`.
-- To create a new student, send a POST request to `/students` with the student data in the request body.
-- To retrieve all students, send a GET request to `/students`.
-- To retrieve a student by ID, send a GET request to `/students/{student_id}`.
-- To search for students by name, send a GET request to `/students/search/{student_name}`.
-- To delete a student by ID, send a DELETE request to `/students/{student_id}`.
-- To delete all students, send a DELETE request to `/deleteAllStudents`.
-
-### Dependencies
-
-- Java
-- Spring Boot
-- Jakarta Validation API
-- Spring Web
-- Postgresql
-- Lombok
-- Openapi Swagger-ui
-- Maven Plugin
 
