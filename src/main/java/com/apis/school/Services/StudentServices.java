@@ -7,6 +7,7 @@ import com.apis.school.repository.StudentRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class StudentServices {
@@ -27,12 +28,17 @@ public class StudentServices {
     public List<Student> findAllStudent(){
         return repository.findAll();
     }
-    public Student findStudentById(Integer id){
-        return repository.findById(id).orElse(null);
+    public StudentResponseDto findStudentById(Integer id){
+        return repository.findById(id)
+                .map(studentMapper::toStudentResponseDto)
+                .orElse(null);
     }
 
-    public List<Student> findStudentsByName(String firstName){
-        return repository.findAllByFirstNameContaining(firstName);
+    public List<StudentResponseDto> findStudentsByName(String firstName){
+        return repository.findAllByFirstNameContaining(firstName)
+                .stream()
+                .map(studentMapper::toStudentResponseDto)
+                .collect(Collectors.toList());
     }
 
     public void deleteStudentById(Integer id){

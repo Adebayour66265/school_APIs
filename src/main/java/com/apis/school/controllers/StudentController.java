@@ -1,6 +1,5 @@
 package com.apis.school.controllers;
 
-import com.apis.school.ErrorsController.ErrorFile;
 import com.apis.school.Services.StudentServices;
 import com.apis.school.dto.StudentDto;
 import com.apis.school.dto.StudentResponseDto;
@@ -35,12 +34,12 @@ public class StudentController {
     }
 
     @GetMapping("/students/{student_id}")
-    public Student findStudentById(@PathVariable("student_id") Integer id){
+    public StudentResponseDto findStudentById(@PathVariable("student_id") Integer id){
         return studentServices.findStudentById(id);
     }
 
     @GetMapping("/students/search/{student_name}")
-    public List<Student> findStudentsByName(@PathVariable("student_name") String firstName){
+    public List<StudentResponseDto> findStudentsByName(@PathVariable("student_name") String firstName){
         return studentServices.findStudentsByName(firstName);
     }
 
